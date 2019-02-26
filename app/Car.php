@@ -11,8 +11,9 @@ use DB;
 
 class Car extends Model implements AuthenticatableContract, AuthorizableContract
 {
-    use Authenticatable, Authorizable;
 
+    protected $table = 'cars';
+    
     /**
      * The attributes that are mass assignable.
      *
