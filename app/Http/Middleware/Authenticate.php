@@ -51,9 +51,9 @@ class Authenticate
             return $next($request);
         }
 
-        dd("hh");
         $access_token = $request->header('Authorization');
         $access_token = str_replace("Bearer ","",$access_token);
+        dd("hh",$access_token);
         if($access_token){
             $user = User::where('access_token',$access_token)->first();
 
