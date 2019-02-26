@@ -53,7 +53,7 @@ class Authenticate
         $access_token = str_replace("Bearer ","",$access_token);
         if($access_token){
             $user = \App\User::where('access_token',$access_token)->first();
-        dd("here",$user);
+        dd("here",$user,$access_token);
             if($user){
                 $request->merge(array("user"=>$user));
                 return $next($request);
