@@ -46,7 +46,7 @@ class UserController extends Controller
     			'phone'=>$request['phone'],
     			'address'=>$request['address'],
     			'city_id'=>$request['city_id'],
-    			'country_code'=>$request['country_code'],
+    			'country_id'=>$request['country_code'],
     			'nic_number'=>$request['nic_number'],
     			'license_number'=>$request['licence_number'],
     			'role_id'=>'3',
