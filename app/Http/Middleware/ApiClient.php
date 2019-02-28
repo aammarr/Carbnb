@@ -40,8 +40,8 @@ class ApiClient
     {
         $client_id = $request->header('client_id');
         $authorization_header = $request->header('Authorization');
-        /*$client_secret = str_replace("Basic ","",$authorization_header);
-        $client = DB::table('clients')
+        $client_secret = str_replace("Basic ","",$authorization_header);
+        /*$client = DB::table('clients')
                     ->where('client_id', $client_id)
                     ->where('client_secret',$client_secret)
                     ->first();
@@ -49,9 +49,10 @@ class ApiClient
 
         if($client){
             return $next($request);
-        }*/
-
+        }
         dd("hh",$request->header('client_id'),$request->header('Authorization'),$authorization_header);
+        */
+        
         $access_token = $request->header('Authorization');
         $access_token = str_replace("Bearer ","",$access_token);
         if($access_token){
