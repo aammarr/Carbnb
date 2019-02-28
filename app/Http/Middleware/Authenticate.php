@@ -40,6 +40,8 @@ class Authenticate
     {
         $client_id = $request->header('client_id');
         $authorization_header = $request->header('Authorization');
+        
+        dd($client_id,$authorization_header);
         $client_secret = str_replace("Basic ","",$authorization_header);
         $client = DB::table('clients')
                     ->where('client_id', $client_id)
