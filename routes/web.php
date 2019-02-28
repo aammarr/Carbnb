@@ -36,7 +36,7 @@ $router->group(['prefix'=>'api/user','middleware'=>'auth'],function() use ($rout
 
 });
 
-$router->group(['prefix'=>'api/user','middleware'=>'auth'],function() use ($router){
+$router->group(['prefix'=>'api/user','middleware'=>'authClient'],function() use ($router){
 
 	$router->get('/logout','UserController@logout');
 	$router->post('/changepassword','UserController@changePassword');
