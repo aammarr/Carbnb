@@ -40,20 +40,20 @@ class Authenticate
     {
         $client_id = $request->header('client_id');
         $authorization_header = $request->header('Authorization');
-        
-        dd($client_id,$authorization_header);
+        dd("hh",$request->header('client_id'),$request->header('Authorization'),$authorization_header);
         $client_secret = str_replace("Basic ","",$authorization_header);
         $client = DB::table('clients')
                     ->where('client_id', $client_id)
                     ->where('client_secret',$client_secret)
                     ->first();
-    
+        
+
         if($client){
             return $next($request);
         }
 
         $access_token = $request->header('Authorization');
-        $access_token = str_replace("Basic ","",$access_token);
+        $access_token = str_replace("Bearer ","",$access_token);
         if($access_token){
             $user = User::where('access_token',$access_token)->first();
 
