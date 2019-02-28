@@ -52,10 +52,10 @@ class ApiClient
         }
         dd("hh",$request->header('client_id'),$request->header('Authorization'),$authorization_header);
         */
-        
+
         // $access_token = $request->header('Authorization');
         // $access_token = str_replace("Bearer ","",$access_token);
-        if($access_token){
+        if($authorization_header){
             $user = User::where('access_token',$authorization_header)->first();
 
             if($user){
